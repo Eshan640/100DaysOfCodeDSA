@@ -1,13 +1,30 @@
-n = int(input())
-arr = list(map(int, input().split()))
+#include <stdio.h>
 
-left = 0
-right = n - 1
+int main() {
+    int n;
+    scanf("%d", &n);
 
-while left < right:
-    # swap
-    arr[left], arr[right] = arr[right], arr[left]
-    left += 1
-    right -= 1
+    int arr[n];
 
-print(*arr)
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    int left = 0;
+    int right = n - 1;
+
+    while (left < right) {
+        int temp = arr[left];
+        arr[left] = arr[right];
+        arr[right] = temp;
+
+        left++;
+        right--;
+    }
+
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+
+    return 0;
+}
